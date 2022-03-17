@@ -115,7 +115,7 @@ RUN git clone "ssh://svc_tbuinte@gerrit1.harman.com:29418/int_tpf/tcam2_test" &&
 RUN service ssh start
 RUN apt-get install -y adb
 RUN apt-get install -y tshark
-# RUN apt-get install -y dlt-daemon
+RUN apt-get install -y dlt-daemon
 
 EXPOSE 1025
 
