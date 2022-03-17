@@ -112,6 +112,7 @@ RUN apt-get install -y sudo
 RUN apt-get install -y vim
 RUN service ssh start
 RUN apt-get install -y adb
+RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
 RUN apt-get install -y tshark
 RUN apt-get install -y dlt-daemon
 
