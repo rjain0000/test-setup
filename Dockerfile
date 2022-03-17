@@ -104,14 +104,12 @@ RUN apt-get install -y openjdk-8-jre
 RUN apt-get install -y git
 RUN mkdir -p /root/.ssh
 COPY .ssh/* /root/.ssh/
-RUN echo "LogLevel=quiet" > .ssh/config
 RUN chmod 700 /root/.ssh
 RUN chmod 700 /root/.ssh/*
 
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y sudo
 RUN apt-get install -y vim
-RUN git clone "ssh://svc_tbuinte@gerrit1.harman.com:29418/int_tpf/tcam2_test" && scp -p -P 29418 svc_tbuinte@gerrit1.harman.com:hooks/commit-msg "tcam2_test/.git/hooks/"
 RUN service ssh start
 RUN apt-get install -y adb
 RUN apt-get install -y tshark
